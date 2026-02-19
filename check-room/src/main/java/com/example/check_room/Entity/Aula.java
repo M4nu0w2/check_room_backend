@@ -6,6 +6,7 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Table(name="aula")
@@ -23,7 +24,7 @@ public class Aula {
             joinColumns = @JoinColumn(name = "idAula"),
             inverseJoinColumns = @JoinColumn(name = "idAttrezzatura")
     )
-    private Set<Attrezzatura> attrezzature = new HashSet<>();
+    private List<Attrezzatura> attrezzature;
     private String nome;
     private String edificio;
     private int piano;
@@ -31,7 +32,10 @@ public class Aula {
     private String descrizione;
     private boolean attiva;
 
+    @Column(name="createdAt")
     private LocalDateTime createdAt;
+
+    @Column(name="updatedAt")
     private LocalDateTime updatedAt;
 
 }

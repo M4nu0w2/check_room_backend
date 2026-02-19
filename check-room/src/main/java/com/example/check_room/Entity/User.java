@@ -17,8 +17,14 @@ public class User {
     private String nome;
     private String cognome;
     private String email;
+
+    @Column(name="passwordHash")
     private String password;
     private String ruolo;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
+
+    @Column(name="createdAt")
+    private LocalDateTime createdAt;
+
+    @Column(name="updatedAt")
+    private LocalDateTime updatedAt;
 }

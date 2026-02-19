@@ -22,11 +22,11 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public UserDTO getUserById(@RequestParam Long id){
+    public UserDTO getUserById(@PathVariable Long id){
         return userService.getUserById(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public UserDTO putUser(@RequestBody UserDTO dto){
         return userService.putUser(dto);
     }
